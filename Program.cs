@@ -11,6 +11,9 @@ namespace Twiter_Bildings
     {
         public static void createRectangleEXP(int width, int height)//יצירת מלבן דוגמא
         {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("-------1-------");
             for (int i = 0; i < width; i++)//שורה ראשונה
             {
                 Console.Write("*");
@@ -34,6 +37,8 @@ namespace Twiter_Bildings
         }
         public static void createTriangularEXP(int height)//יצירת מלבן לדוןגמא
         {
+            Console.WriteLine();
+            Console.WriteLine("-------2-------");
             string spaceAfter = " ", spaceBefore = "", space = " ";
             for (int i = 0; i < height - 2; i++)//רווחים
             {
@@ -113,20 +118,14 @@ namespace Twiter_Bildings
         static void Main(string[] args)
         {
             int width, height, building = 1, answre = 1;
+            createRectangleEXP(4, 5);
+            createTriangularEXP(7);
+            Console.WriteLine();
 
-            while (building!=3)
+            building = GetInput("enter your choise (1/2) To exit press 3");
+            while (building != 3)
             {
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("-------1-------");
-                createRectangleEXP(4, 5);
-                Console.WriteLine();
 
-                Console.WriteLine("-------2-------");
-                createTriangularEXP(7);
-                Console.WriteLine();
-
-                building = GetInput("enter your choise (1/2)");
                 while (building <= 0 || building >= 4)
                 {
                     Console.WriteLine("Invalid input- please try again:");
@@ -138,7 +137,7 @@ namespace Twiter_Bildings
                     Console.WriteLine("Invalid input- please try again:");
                     width = GetInput("enter width");
                 }
-                 height = GetInput("enter height");
+                height = GetInput("enter height");
                 if (building == 1)
                 {
                     if (height - width > 5)
@@ -161,7 +160,7 @@ namespace Twiter_Bildings
                     {
                         Console.WriteLine("The perimeter of the triangle is " + (width + height * 2));
                     }
-                   else
+                    else
                     {
                         if (width % 2 == 0 || width > height * 2)
                         {
@@ -177,9 +176,13 @@ namespace Twiter_Bildings
                     }
 
                 }
+                createRectangleEXP(4, 5);
+                createTriangularEXP(7);
                 Console.WriteLine();
-                building = GetInput("to exit enter 3, to countine enter 1");
+
+                building = GetInput("enter your choise (1/2) To exit press 3");
             }
+            Console.WriteLine(" You have exit the program!");
             Console.ReadLine();
         }
     }
