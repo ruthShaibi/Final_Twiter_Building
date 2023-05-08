@@ -140,7 +140,7 @@ namespace Twiter_Bildings
                 height = GetInput("enter height");
                 if (building == 1)
                 {
-                    if (height - width > 5)
+                    if (height - width > 5 || height==width)
                     {
                         Console.WriteLine("the area of the rectangle is" + height * width);
                     }
